@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <div id='app'>
+    <p>name: <%this.name%></p>
+    <p>age: <%this.profile.age%></p>
+    <ul>
+      my skills: <%for(var i in this.skills){%>
+      <li><%this.skills[i]%></li>
+      <%}%>
+    </ul>
+  </div>
+</body>
+<script src='index.js'></script>
+<script>
+  document.querySelector('#app').innerHTML = (templateEngine(document.querySelector('#app').innerHTML, {
+    name: 'lin',
+    profile: { age: 23 },
+    skills: ['h5', 'js', 'java']
+  }))
+</script>
+</html>
